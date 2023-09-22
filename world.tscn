@@ -28,7 +28,6 @@ position = Vector2(1080, 200)
 shape = SubResource("RectangleShape2D_vvxtc")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 144.0
 offset_top = 384.0
-offset_right = 1016.0
+offset_right = 1144.0
 offset_bottom = 536.0
