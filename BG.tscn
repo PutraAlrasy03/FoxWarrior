@@ -69,7 +69,6 @@ texture = ExtResource("3_0gfps")
 
 [node name="Middle4" type="Sprite2D" parent="Ground"]
 position = Vector2(584, 464)
-scale = Vector2(1, 1)
 texture = ExtResource("3_0gfps")
 
 [node name="Middle5" type="Sprite2D" parent="Ground"]
