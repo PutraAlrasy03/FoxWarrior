@@ -37,6 +37,15 @@ func _on_player_detection_body_exited(body):
 
 func _on_player_death_body_entered(body):
 	if body.name == "Player":
+		death()
+
+
+func _on_player_collison_body_entered(body):
+	if body.name == "Player":
+		body.health -= 3
+		death()
+
+func death():
 		chase = false
 		get_node("AnimatedSprite2D").play("death")
 		await get_node("AnimatedSprite2D").animation_finished
