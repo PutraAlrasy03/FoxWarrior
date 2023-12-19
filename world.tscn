@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://e5t4ddvt2fyt"]
+[gd_scene load_steps=11 format=3 uid="uid://e5t4ddvt2fyt"]
 
 [ext_resource type="PackedScene" uid="uid://dcgu0qjq1po66" path="res://Player/Player.tscn" id="1_0ms38"]
 [ext_resource type="Script" path="res://BG.gd" id="1_44147"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c5vmhm3t1cecs" path="res://Sunny-land-assets-files/code/sunny-land/assets/environment/back.png" id="2_5xn8y"]
 [ext_resource type="PackedScene" uid="uid://bk5hqy2lfrs55" path="res://BG.tscn" id="5_mwegh"]
 [ext_resource type="PackedScene" uid="uid://bmj7j67wjc083" path="res://Frog.tscn" id="6_byid1"]
-[ext_resource type="Script" path="res://Hp.gd" id="7_wkf2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shves"]
 texture = ExtResource("1_cem1a")
@@ -413,6 +412,34 @@ texture = ExtResource("1_cem1a")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_shves")
 
+[sub_resource type="GDScript" id="GDScript_4dskg"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text =\"HP:\" +str (Game.playerHP)
+"
+
+[sub_resource type="GDScript" id="GDScript_hac3m"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text =\"Gold:\" +str(Game.Gold)
+"
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -469,4 +496,16 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP
 "
-script = ExtResource("7_wkf2w")
+script = SubResource("GDScript_4dskg")
+
+[node name="Gold" type="Label" parent="UI"]
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "HP
+"
+script = SubResource("GDScript_hac3m")
