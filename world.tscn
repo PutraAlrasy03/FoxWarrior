@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://e5t4ddvt2fyt"]
+[gd_scene load_steps=12 format=3 uid="uid://e5t4ddvt2fyt"]
 
 [ext_resource type="PackedScene" uid="uid://dcgu0qjq1po66" path="res://Player/Player.tscn" id="1_0ms38"]
 [ext_resource type="Script" path="res://BG.gd" id="1_44147"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5vmhm3t1cecs" path="res://Sunny-land-assets-files/code/sunny-land/assets/environment/back.png" id="2_5xn8y"]
 [ext_resource type="PackedScene" uid="uid://bk5hqy2lfrs55" path="res://BG.tscn" id="5_mwegh"]
 [ext_resource type="PackedScene" uid="uid://bmj7j67wjc083" path="res://Frog.tscn" id="6_byid1"]
+[ext_resource type="PackedScene" uid="uid://doo1cic5a6vgb" path="res://Collectable/cherry.tscn" id="7_f2bu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shves"]
 texture = ExtResource("1_cem1a")
@@ -473,16 +474,16 @@ position = Vector2(568, 152)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("6_byid1")]
-position = Vector2(456, 200)
+position = Vector2(1096, 192)
 
 [node name="Frog2" parent="Mobs" instance=ExtResource("6_byid1")]
-position = Vector2(760, 200)
+position = Vector2(1400, 192)
 
 [node name="Frog3" parent="Mobs" instance=ExtResource("6_byid1")]
-position = Vector2(320, 224)
+position = Vector2(960, 216)
 
 [node name="Frog4" parent="Mobs" instance=ExtResource("6_byid1")]
-position = Vector2(664, 240)
+position = Vector2(1304, 232)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -509,3 +510,8 @@ theme_override_font_sizes/font_size = 24
 text = "HP
 "
 script = SubResource("GDScript_hac3m")
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Cherry" parent="Collectables" instance=ExtResource("7_f2bu2")]
+position = Vector2(400, 272)
